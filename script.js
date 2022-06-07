@@ -7,10 +7,10 @@ const details=document.querySelector('.details');
 
 let data=[];
 
+// Functions
 async function getRandomUser(){
     const res=await fetch('https://randomuser.me/api');
     const data= await res.json();
-
     const user=data.results[0];
 
     let newUser={
@@ -52,7 +52,6 @@ function double(personObject){
     return personObject;
 }
 
-
 function showMillionairesFunc(dataArray=data){
     console.log('This is Exec');
     data=data.filter(filterMoney);
@@ -86,6 +85,7 @@ function sum(){
     return formatMoney(sumMoney);
 }
 
+// Event Listeners
 addUser.addEventListener('click',getRandomUser);
 doubleMoney.addEventListener('click',doubleMoneyFunc);
 showMillionaires.addEventListener('click',showMillionairesFunc);
